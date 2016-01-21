@@ -59,4 +59,5 @@ ENTRYPOINT ["/entrypoint.sh"]
 
 EXPOSE 27017 28017
 
-CMD ["mongod --storageEngine wiredTiger --httpinterface --rest --master --auth"]
+CMD ["mongod"]
+# --storageEngine wiredTiger --httpinterface --rest --master --auth
