@@ -10,7 +10,7 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10 && \
     echo "mongodb-org-tools hold" | dpkg --set-selections
 
 VOLUME /data/db
-
+USER root
 ENV AUTH yes
 ENV STORAGE_ENGINE wiredTiger
 ENV JOURNALING yes
