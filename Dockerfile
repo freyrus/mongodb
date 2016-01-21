@@ -59,5 +59,5 @@ VOLUME /data/db
 RUN chown -R mongodb /data/db
 
 EXPOSE 27017 28017
-
+USER mongodb
 RUN mongod --storageEngine wiredTiger --httpinterface --rest --master --auth --fork --logpath /var/log/mongodb.log
