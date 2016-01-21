@@ -12,7 +12,7 @@ dependencies:
 test:
   override:
     - docker run -d -p 28087:28017 -e MONGODB_PASS="$MONGODB_PASS" --name mongodb-3.0 freyrus/mongodb; sleep 30
-    - docker run --link mongodb-3.0:db mongodb-3.0 mongo admin -uadmin -pmypass --eval "db.stats();" --host db --port 27017
+    - docker run --link mongodb-3.0:db freyrus/mongodb mongo admin -uadmin -pmypass --eval "db.stats();" --host db --port 27017
     - curl --user admin:mypass --digest  http://localhost:28087/hostInfo\?text\=1
 
 deployment:
