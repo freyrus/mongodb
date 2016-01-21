@@ -15,6 +15,6 @@ if [ "$OPLOG_SIZE" != "" ]; then
     cmd="$cmd --oplogSize $OPLOG_SIZE"
 fi
 
-$cmd
+$cmd &
 
 fg
