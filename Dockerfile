@@ -63,4 +63,4 @@ EXPOSE 27017 28017
 
 USER root
 
-RUN /run.sh
+#RUN /run.sh
