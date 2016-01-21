@@ -57,7 +57,7 @@ VOLUME /data/db
 ENV AUTH yes
 ENV STORAGE_ENGINE wiredTiger
 ENV JOURNALING yes
-
+USER root
 ADD run.sh /run.sh
 
 EXPOSE 27017 28017

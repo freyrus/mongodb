@@ -1,0 +1,7 @@
+containers:
+    mongodb:
+        image: freyrus/mongodb
+        run:
+            volume: [".:/data/db:rw"]
+            detach: true
+            publish: ["27017:27017","28017:28017"]
