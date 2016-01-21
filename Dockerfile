@@ -57,8 +57,7 @@ VOLUME /data/db
 #RUN chmod +x /entrypoint.sh
 #ENTRYPOINT ["/entrypoint.sh"]
 RUN chown -R mongodb /data/db
-RUN mkdir -p /data/db/log
 
 EXPOSE 27017 28017
 
-RUN mongod --storageEngine wiredTiger --httpinterface --rest --master --auth --fork --logpath /data/db/log/mongodb.log
+RUN mongod --storageEngine wiredTiger --httpinterface --rest --master --auth --fork --logpath /var/log/mongodb.log
