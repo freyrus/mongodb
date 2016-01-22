@@ -53,11 +53,8 @@ RUN set -x \
 RUN mkdir -p /data/db && chown -R mongodb:mongodb /data/db
 VOLUME /data/db
 
-#COPY docker-entrypoint.sh /entrypoint.sh
-#RUN chmod +x /entrypoint.sh
-#ENTRYPOINT ["/entrypoint.sh"]
 RUN chown -R mongodb:mongodb /data/db
 
 EXPOSE 27017 28017
 USER mongodb
-RUN mongod --storageEngine wiredTiger --httpinterface --rest --master --auth &
+CMD["mongod --storageEngine wiredTiger --httpinterface --rest --master --auth"]
