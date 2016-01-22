@@ -11,7 +11,8 @@ dependencies:
     - docker build -t freyrus/mongodb .
 test:
   override:
-    - docker run -d -p 28087:28017 -e MONGODB_PASS="$MONGODB_PASS" --name mongodb-3.0 freyrus/mongodb; sleep 30
+    - docker run -d -p 28087:28017 -e MONGODB_PASS="mypass" --name mongodb freyrus/mongodb; sleep 30
+    - docker run --link mongodb:db freyrus/mongodb mongo admin -uadmin -pmypass --eval "db.stats();" --host db --port 27017
 
 deployment:
   hub:
