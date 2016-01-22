@@ -12,7 +12,6 @@ dependencies:
 test:
   override:
     - docker run -d -p 28087:28017 -e MONGODB_PASS="$MONGODB_PASS" --name mongodb-3.0 freyrus/mongodb; sleep 30
-    # - curl --user admin:mypass --digest  http://localhost:28087/hostInfo\?text\=1
 
 deployment:
   hub:
